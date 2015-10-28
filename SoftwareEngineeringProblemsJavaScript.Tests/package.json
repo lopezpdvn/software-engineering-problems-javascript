@@ -1,0 +1,10 @@
+{
+  "name": "SoftwareEngineeringProblemsJavaScript.Tests",
+  "version": "0.0.0",
+  "description": "SoftwareEngineeringProblemsJavaScript.Tests",
+  "main": "app.js",
+  "author": {
+    "name": "dreilopz0",
+    "email": ""
+  }
+}
