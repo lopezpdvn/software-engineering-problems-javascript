@@ -2,9 +2,11 @@
   "name": "SoftwareEngineeringProblemsJavaScript.Tests",
   "version": "0.0.0",
   "description": "SoftwareEngineeringProblemsJavaScript.Tests",
-  "main": "app.js",
   "author": {
-    "name": "dreilopz0",
-    "email": ""
+    "name": "Pedro Ivan Lopez",
+    "email": "m@pedroivanlopez.com"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.4"
   }
 }
