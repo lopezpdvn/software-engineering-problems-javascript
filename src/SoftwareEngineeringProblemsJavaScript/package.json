@@ -2,7 +2,7 @@
   "name": "SoftwareEngineeringProblemsJavaScript",
   "version": "0.0.0",
   "description": "SoftwareEngineeringProblemsJavaScript",
-  "main": "app.js",
+  "main": "index.js",
   "author": {
     "name": "Pedro Ivan Lopez",
     "email": "m@pedroivanlopez.com"

@@ -1,5 +1,6 @@
 ﻿exports.Jessie = Jessie;
 
+// Jessie =============================================================
 /* Constructor/Prototype pattern */
 function Jessie(hostname) {
     this.hostname = hostname;
@@ -15,3 +16,11 @@ Object.defineProperty(Jessie.prototype, "constructor", {
     enumerable: false,
     value: Jessie
 });
+
+Object.defineProperty(Jessie.prototype, "OSName", {
+    enumerable: false,
+    configurable: false,
+    writable: false,
+    value: "Debian/Jessie"
+});
+// End Jessie =========================================================
