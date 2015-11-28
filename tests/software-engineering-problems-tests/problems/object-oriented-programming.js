@@ -2,9 +2,10 @@
 var path = require('path');
 
 // All file-based modules are relative to root of package
-var packageJSON = require('../package');
-var problems = require(path.join('..',
-    packageJSON.dependencies.SoftwareEngineeringProblemsJavaScript
+var rootPkgPrefix = "..";
+var packageJSON = require(path.join(rootPkgPrefix, 'package'));
+var problems = require(path.join(rootPkgPrefix,
+    packageJSON.dependencies["software-engineering-problems"]
     .replace(/^file:/, "")));
 var Jessie = problems.oop.Jessie;
 

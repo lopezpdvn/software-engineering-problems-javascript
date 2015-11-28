@@ -1,14 +1,14 @@
 {
-  "name": "SoftwareEngineeringProblemsJavaScript.Tests",
+  "name": "software-engineering-problems-tests",
   "version": "0.0.0",
-  "description": "Tests for SoftwareEngineeringProblemsJavaScript",
+  "description": "Tests for software-engineering-problems",
   "author": {
     "name": "Pedro Ivan Lopez",
     "email": "m@pedroivanlopez.com",
     "url": "http://pedroivanlopez.com"
   },
   "dependencies": {
-    "SoftwareEngineeringProblemsJavaScript":  "file:../../src/SoftwareEngineeringProblemsJavaScript"
+    "software-engineering-problems":  "file:../../src/software-engineering-problems"
   },
   "devDependencies": {
     "mocha": "^2.3.4"
