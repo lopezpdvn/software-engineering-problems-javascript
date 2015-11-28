@@ -6,7 +6,9 @@
     "name": "Pedro Ivan Lopez",
     "email": "m@pedroivanlopez.com"
   },
-  "SoftwareEngineeringProblemsJavaScript":  "../../src/SoftwareEngineeringProblemsJavaScript",
+  "dependencies": {
+    "SoftwareEngineeringProblemsJavaScript":  "file:../../src/SoftwareEngineeringProblemsJavaScript"
+  },
   "devDependencies": {
     "mocha": "^2.3.4"
   }
