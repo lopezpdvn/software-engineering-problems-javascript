@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="index.js" />
-    <Compile Include="problems\misc.js" />
     <Compile Include="problems\object-oriented-programming.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />

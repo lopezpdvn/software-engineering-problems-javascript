@@ -1,10 +1,11 @@
 {
   "name": "SoftwareEngineeringProblemsJavaScript.Tests",
   "version": "0.0.0",
-  "description": "SoftwareEngineeringProblemsJavaScript.Tests",
+  "description": "Tests for SoftwareEngineeringProblemsJavaScript",
   "author": {
     "name": "Pedro Ivan Lopez",
-    "email": "m@pedroivanlopez.com"
+    "email": "m@pedroivanlopez.com",
+    "url": "http://pedroivanlopez.com"
   },
   "dependencies": {
     "SoftwareEngineeringProblemsJavaScript":  "file:../../src/SoftwareEngineeringProblemsJavaScript"

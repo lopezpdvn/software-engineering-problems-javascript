@@ -1,10 +1,11 @@
 {
   "name": "SoftwareEngineeringProblemsJavaScript",
   "version": "0.0.0",
-  "description": "SoftwareEngineeringProblemsJavaScript",
+  "description": "Software engineering problems in JavaScript",
   "main": "index.js",
   "author": {
     "name": "Pedro Ivan Lopez",
-    "email": "m@pedroivanlopez.com"
+    "email": "m@pedroivanlopez.com",
+    "url": "http://pedroivanlopez.com"
   }
 }

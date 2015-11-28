@@ -31,10 +31,6 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="problems\misc.js">
-      <SubType>Code</SubType>
-      <TestFramework>Mocha</TestFramework>
-    </Compile>
     <Compile Include="problems\object-oriented-programming.js">
       <SubType>Code</SubType>
       <TestFramework>Mocha</TestFramework>

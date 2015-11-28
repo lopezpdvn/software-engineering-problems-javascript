@@ -8,11 +8,11 @@ var problems = require(path.join('..',
     .replace(/^file:/, "")));
 var Jessie = problems.oop.Jessie;
 
-describe('OOP Tests', function () {
-    it('Test Jessie', function () {
+describe('OOP', function () {
+    it('Jessie', function () {
         var host0;
         assert.strictEqual(typeof host0, "undefined");
-        assert.strictEqual(typeof Jessie, "function", "This shouldn't fail");
+        assert.strictEqual(typeof Jessie, "function");
         host0 = new Jessie("myHostname");
         assert.ok(host0 instanceof Jessie);
         assert.ok(host0 instanceof Object);
@@ -20,7 +20,7 @@ describe('OOP Tests', function () {
         assert.notStrictEqual(host0.constructor, Object);
     });
 
-    it('Test Object Data Properties', function () {
+    it('Object Data Properties', function () {
         var host0 = new Jessie("myHostName");
         
         // Data property definition
@@ -38,7 +38,7 @@ describe('OOP Tests', function () {
         assert.strictEqual(host0.OSName, "Debian/Jessie");
     });
 
-    it('Test Object Accesor Properties', function () {
+    it('Object Accesor Properties', function () {
         var host0 = new Jessie("myHostName");
         
         // Accesor property definition
