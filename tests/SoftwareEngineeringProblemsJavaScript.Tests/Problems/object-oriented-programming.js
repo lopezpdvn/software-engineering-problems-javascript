@@ -9,20 +9,17 @@ var problems = require(path.join('..',
 var Jessie = problems.oop.Jessie;
 
 describe('OOP', function () {
+    var host0 = new Jessie("myHostname");
+
     it('Jessie', function () {
-        var host0;
-        assert.strictEqual(typeof host0, "undefined");
         assert.strictEqual(typeof Jessie, "function");
-        host0 = new Jessie("myHostname");
         assert.ok(host0 instanceof Jessie);
         assert.ok(host0 instanceof Object);
         assert.strictEqual(host0.constructor, Jessie);
         assert.notStrictEqual(host0.constructor, Object);
     });
 
-    it('Object Data Properties', function () {
-        var host0 = new Jessie("myHostName");
-        
+    it('Object Data Properties', function () {    
         // Data property definition
         assert.ok("OSName" in host0);
         
@@ -38,9 +35,7 @@ describe('OOP', function () {
         assert.strictEqual(host0.OSName, "Debian/Jessie");
     });
 
-    it('Object Accesor Properties', function () {
-        var host0 = new Jessie("myHostName");
-        
+    it('Object Accesor Properties', function () {        
         // Accesor property definition
         assert.ok("runLevel" in host0);
         
