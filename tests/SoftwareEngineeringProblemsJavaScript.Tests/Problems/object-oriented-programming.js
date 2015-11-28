@@ -1,5 +1,10 @@
 ﻿var assert = require('assert');
-var problems = require('../../../src/SoftwareEngineeringProblemsJavaScript');
+var path = require('path');
+
+// All file-based modules are relative to root of package
+var packageJSON = require('../package');
+var problems = require(
+    path.join('..', packageJSON.SoftwareEngineeringProblemsJavaScript));
 var Jessie = problems.oop.Jessie;
 
 describe('OOP Tests', function () {
@@ -30,5 +35,27 @@ describe('OOP Tests', function () {
         // [[Writable]] === false
         host0.OSName = "otherString";
         assert.strictEqual(host0.OSName, "Debian/Jessie");
+    });
+
+    it('Test Object Accesor Properties', function () {
+        var host0 = new Jessie("myHostName");
+        
+        // Accesor property definition
+        assert.ok("runLevel" in host0);
+        
+        // [[Get]]
+        assert.strictEqual(host0.runLevel, 4);
+        
+        // [[Configurable]] === false
+        delete host0.runLevel;
+        assert.strictEqual(host0.runLevel, 4);
+        
+        // [[Set]]
+        host0.runLevel = -1;
+        assert.strictEqual(host0.runLevel, 0);
+        host0.runLevel = 2;
+        assert.strictEqual(host0.runLevel, 2);
+        host0.runLevel = 7;
+        assert.strictEqual(host0.runLevel, 6);
     });
 });

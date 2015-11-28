@@ -5,6 +5,7 @@
 function Jessie(hostname) {
     this.hostname = hostname;
     this.createDate = new Date();
+    this._runLevel = 4;
 }
 
 Jessie.prototype = {
@@ -22,5 +23,20 @@ Object.defineProperty(Jessie.prototype, "OSName", {
     configurable: false,
     writable: false,
     value: "Debian/Jessie"
+});
+
+Object.defineProperty(Jessie.prototype, "runLevel", {
+    configurable: false,
+    get: function () {
+        return this._runLevel;
+    },
+    set: function (newRunLevel) {
+        if (newRunLevel < 0) {
+            newRunLevel = 0;
+        } else if (newRunLevel > 6) {
+            newRunLevel = 6;
+        }
+        this._runLevel = newRunLevel;
+    }
 });
 // End Jessie =========================================================
