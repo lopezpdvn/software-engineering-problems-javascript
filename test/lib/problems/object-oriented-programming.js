@@ -2,7 +2,7 @@
 var path = require('path');
 
 // All file-based modules are relative to root of package
-var problems = require('../..');
+var problems = require('../../..');
 var Jessie = problems.oop.Jessie;
 
 describe('OOP', function () {

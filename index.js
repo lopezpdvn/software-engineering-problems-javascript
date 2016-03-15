@@ -1,1 +1,1 @@
-﻿exports.oop = require('./src/problems/object-oriented-programming');
+﻿exports.oop = require('./src/lib/problems/object-oriented-programming');
