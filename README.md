@@ -2,6 +2,4 @@
 
 by [Pedro Ivan Lopez](http://pedroivanlopez.com)
 
-Both projects `src/SoftwareEngineeringProblemsJavaScript` and
-`tests/SoftwareEngineeringProblemsJavaScript.Tests` are Node.js console
-projects.
+*Software engineering problems in JavaScript* is a Node.js console project.
