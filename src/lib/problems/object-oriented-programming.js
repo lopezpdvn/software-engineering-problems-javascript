@@ -1,4 +1,4 @@
-﻿exports.Jessie = Jessie;
+﻿'use strict';
 
 // Jessie =============================================================
 /* Constructor/Prototype pattern */
@@ -40,3 +40,22 @@ Object.defineProperty(Jessie.prototype, "runLevel", {
     }
 });
 // End Jessie =========================================================
+
+class DoublyLinkedList {
+    constructor(name = (new Date()).toString()) {
+        // this.name is read-only.
+        Object.defineProperty(this, 'name', {
+            value: name,
+            enumerable: true,
+        });
+
+        this.writable = 'a';
+    }
+}
+
+class StackLinkedList extends DoublyLinkedList {
+}
+
+exports.Jessie = Jessie;
+exports.DoublyLinkedList = DoublyLinkedList;
+exports.StackLinkedList = StackLinkedList;
