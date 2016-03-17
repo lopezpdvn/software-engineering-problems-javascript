@@ -10,7 +10,8 @@
   },
   "scripts": {
     "compile": "babel --presets es2015 -d dist/ src/",
-    "test": "npm run compile && mocha --recursive --compilers js:babel-core/register test"
+    "test": "npm run compile && mocha --recursive --compilers js:babel-core/register test",
+    "push": "git push origin master"
   },
   "devDependencies": {
     "mocha": "^2.4.5",
