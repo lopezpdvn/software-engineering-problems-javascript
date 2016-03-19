@@ -50,12 +50,22 @@ class DoublyLinkedList {
         });
 
         this.writable = 'a';
+        this._arr = [];
+    }
+
+    addLast(node) {
+        this._arr.push(node);
     }
 }
 
 class StackLinkedList extends DoublyLinkedList {
 }
 
+function FuncConstructor(name) {
+    this.name = name;
+}
+
 exports.Jessie = Jessie;
 exports.DoublyLinkedList = DoublyLinkedList;
 exports.StackLinkedList = StackLinkedList;
+exports.FuncConstructor = FuncConstructor;
