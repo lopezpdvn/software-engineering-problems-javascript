@@ -61,11 +61,22 @@ class DoublyLinkedList {
 class StackLinkedList extends DoublyLinkedList {
 }
 
-function FuncConstructor(name) {
+class Class00 {
+    constructor(name = (new Date()).toString()) {
+        this.name = name;
+    }
+}
+
+function FunctionConstructorWithThis(name) {
     this.name = name;
+}
+
+function FunctionConstructorWithoutThis() {
 }
 
 exports.Jessie = Jessie;
 exports.DoublyLinkedList = DoublyLinkedList;
 exports.StackLinkedList = StackLinkedList;
-exports.FuncConstructor = FuncConstructor;
+exports.Class00 = Class00;
+exports.FunctionConstructorWithThis = FunctionConstructorWithThis;
+exports.FunctionConstructorWithoutThis = FunctionConstructorWithoutThis;
