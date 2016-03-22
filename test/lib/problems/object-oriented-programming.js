@@ -1,14 +1,15 @@
-﻿var assert = require('assert');
-var path = require('path');
+﻿const assert = require('assert');
+const path = require('path');
 
 // All file-based modules are relative to root of package
-var problems = require('../../..');
-var Jessie = problems.oop.Jessie;
+const problems = require('../../..');
+const Jessie = problems.oop.Jessie;
+const Class00 = problems.oop.Class00;
 
-describe('OOP', function () {
-    var host0 = new Jessie("myHostname");
+describe('OOP', () => {
+    const host0 = new Jessie("myHostname");
 
-    it('Jessie', function () {
+    it('Jessie', () => {
         assert.strictEqual(typeof Jessie, "function");
         assert.ok(host0 instanceof Jessie);
         assert.ok(host0 instanceof Object);
@@ -16,13 +17,13 @@ describe('OOP', function () {
         assert.notStrictEqual(host0.constructor, Object);
     });
 
-    it('Object Data Properties', function () {    
+    it('Object Data Properties', () => {
         // Data property definition
         assert.ok("OSName" in host0);
-        
+
         // [[Value]]
         assert.strictEqual(host0.OSName, "Debian/Jessie");
-        
+
         // [[Configurable]] === false
         delete host0.OSName;
         assert.strictEqual(host0.OSName, "Debian/Jessie");
@@ -32,17 +33,17 @@ describe('OOP', function () {
         assert.strictEqual(host0.OSName, "Debian/Jessie");
     });
 
-    it('Object Accesor Properties', function () {        
+    it('Object Accesor Properties', () => {
         // Accesor property definition
         assert.ok("runLevel" in host0);
-        
+
         // [[Get]]
         assert.strictEqual(host0.runLevel, 4);
-        
+
         // [[Configurable]] === false
         delete host0.runLevel;
         assert.strictEqual(host0.runLevel, 4);
-        
+
         // [[Set]]
         host0.runLevel = -1;
         assert.strictEqual(host0.runLevel, 0);
@@ -50,5 +51,11 @@ describe('OOP', function () {
         assert.strictEqual(host0.runLevel, 2);
         host0.runLevel = 7;
         assert.strictEqual(host0.runLevel, 6);
+    });
+
+    it('Prototypes and constructors',  () => {
+        const instanceClass = new Class00();
+        assert.strictEqual(Object.getPrototypeOf(instanceClass),
+                Class00.prototype);
     });
 });
