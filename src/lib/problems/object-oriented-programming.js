@@ -82,9 +82,44 @@ FunctionConstructorWithThis.prototype.protoArray = ['a', 'b'];
 function FunctionConstructorWithoutThis() {
 }
 
+// Parasitic combination inheritance ==================================
+
+const inheritPrototype = (subType, superType) => {
+    const prototype = Object.create(superType.prototype);
+    prototype.constructor = subType;
+    subType.prototype = prototype;
+};
+
+function SuperType(name) {
+    this.name = name;
+    this.colors = ['red', 'blue', 'green'];
+}
+
+SuperType.prototype.sayName = function() {
+    console.log(this.name);
+};
+
+function SubType(name, age) {
+    // Constructor stealing
+    SuperType.call(this, name);
+    this.age = age;
+}
+
+inheritPrototype(SubType, SuperType);
+// Replaces SubType.prototype = new SuperType();
+
+SubType.prototype.sayAge = function() {
+    console.log(this.age);
+};
+
+// ====================================================================
+
 exports.Jessie = Jessie;
 exports.DoublyLinkedList = DoublyLinkedList;
 exports.StackLinkedList = StackLinkedList;
 exports.Class00 = Class00;
 exports.FunctionConstructorWithThis = FunctionConstructorWithThis;
 exports.FunctionConstructorWithoutThis = FunctionConstructorWithoutThis;
+exports.SuperType = SuperType;
+exports.SubType = SubType;
+exports.inheritPrototype = inheritPrototype;

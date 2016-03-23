@@ -6,6 +6,8 @@ const problems = require('../../..');
 const Jessie = problems.oop.Jessie;
 const Class00 = problems.oop.Class00;
 const FunctionConstructorWithThis = problems.oop.FunctionConstructorWithThis;
+const SubType = problems.oop.SubType;
+const SuperType = problems.oop.SuperType;
 
 describe('OOP', () => {
     const host0 = new Jessie("myHostname");
@@ -78,5 +80,24 @@ describe('OOP', () => {
         const instanceClass = new Class00();
         assert.strictEqual(Object.getPrototypeOf(instanceClass),
                 Class00.prototype);
+    });
+
+    it('Parasitic combination inheritance',  () => {
+        const subTypeInst = new SubType('subTypeInst', 17);
+        const superTypeInst = new SuperType('superTypeInst');
+
+        assert.ok(subTypeInst.hasOwnProperty('name'));
+        assert.ok(subTypeInst.hasOwnProperty('age'));
+        assert.ok(subTypeInst.hasOwnProperty('colors'));
+        assert.ok(subTypeInst instanceof SubType);
+        assert.ok(subTypeInst instanceof SuperType);
+        assert.ok(subTypeInst instanceof Object);
+
+        assert.ok(superTypeInst.hasOwnProperty('name'));
+        assert.ok(!superTypeInst.hasOwnProperty('age'));
+        assert.ok(superTypeInst.hasOwnProperty('colors'));
+        assert.ok(!(superTypeInst instanceof SubType));
+        assert.ok(superTypeInst instanceof SuperType);
+        assert.ok(superTypeInst instanceof Object);
     });
 });
