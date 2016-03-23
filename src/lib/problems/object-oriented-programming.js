@@ -70,6 +70,7 @@ class Class00 {
 function FunctionConstructorWithThis(name) {
     this.name = name;
 }
+FunctionConstructorWithThis.prototype.protoArray = ['a', 'b'];
 
 function FunctionConstructorWithoutThis() {
 }

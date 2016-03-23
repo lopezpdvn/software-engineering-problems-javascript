@@ -5,6 +5,7 @@ const path = require('path');
 const problems = require('../../..');
 const Jessie = problems.oop.Jessie;
 const Class00 = problems.oop.Class00;
+const FunctionConstructorWithThis = problems.oop.FunctionConstructorWithThis;
 
 describe('OOP', () => {
     const host0 = new Jessie("myHostname");
@@ -51,6 +52,26 @@ describe('OOP', () => {
         assert.strictEqual(host0.runLevel, 2);
         host0.runLevel = 7;
         assert.strictEqual(host0.runLevel, 6);
+    });
+
+    it('Masking prototype properties',  () => {
+        const instFWT0 = new FunctionConstructorWithThis();
+        const instFWT1 = new FunctionConstructorWithThis();
+
+        assert.strictEqual(instFWT0.protoArray,
+                FunctionConstructorWithThis.prototype.protoArray);
+        assert.strictEqual(instFWT1.protoArray,
+                FunctionConstructorWithThis.prototype.protoArray);
+        assert.strictEqual(instFWT0.hasOwnProperty('protoArray'), false);
+        assert.strictEqual(instFWT1.hasOwnProperty('protoArray'), false);
+
+        instFWT1.protoArray = ['b', 'a'];
+        assert.strictEqual(instFWT0.protoArray,
+                FunctionConstructorWithThis.prototype.protoArray);
+        assert.notStrictEqual(instFWT1.protoArray,
+                FunctionConstructorWithThis.prototype.protoArray);
+        assert.strictEqual(instFWT0.hasOwnProperty('protoArray'), false);
+        assert.strictEqual(instFWT1.hasOwnProperty('protoArray'), true);
     });
 
     it('Prototypes and constructors',  () => {
