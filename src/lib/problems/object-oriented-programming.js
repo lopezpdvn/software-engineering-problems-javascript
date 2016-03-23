@@ -4,7 +4,14 @@
 /* Constructor/Prototype pattern */
 function Jessie(hostname) {
     this.hostname = hostname;
-    this.createDate = new Date();
+
+    Object.defineProperty(this, 'createDate', {
+        value: new Date(),
+        enumerable: true,
+        configurable: false,
+        writable: false
+    });
+
     this._runLevel = 4;
 }
 
