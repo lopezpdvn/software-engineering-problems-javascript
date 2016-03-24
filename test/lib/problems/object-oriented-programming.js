@@ -100,4 +100,14 @@ describe('OOP', () => {
         assert.ok(superTypeInst instanceof SuperType);
         assert.ok(superTypeInst instanceof Object);
     });
+
+    it('Default prototypes',  () => {
+        const instanceClass = new Class00();
+        const superType0 = new SuperType('superTypeInst');
+
+        assert.ok(Object.getPrototypeOf(Class00.prototype).constructor
+                === Object);
+        assert.ok(Object.getPrototypeOf(SuperType.prototype).constructor
+                === Object);
+    });
 });
