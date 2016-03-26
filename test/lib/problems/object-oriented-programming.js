@@ -1,4 +1,6 @@
-﻿const assert = require('assert');
+﻿'use strict';
+
+const assert = require('assert');
 const path = require('path');
 
 // All file-based modules are relative to root of package
