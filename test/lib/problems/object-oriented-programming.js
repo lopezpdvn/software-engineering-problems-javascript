@@ -8,6 +8,7 @@ const problems = require('../../..');
 const Jessie = problems.oop.Jessie;
 const Class00 = problems.oop.Class00;
 const FunctionConstructorWithThis = problems.oop.FunctionConstructorWithThis;
+const FunctionConstructorWithoutThis = problems.oop.FunctionConstructorWithoutThis;
 const SubType = problems.oop.SubType;
 const SuperType = problems.oop.SuperType;
 
@@ -111,5 +112,13 @@ describe('OOP', () => {
                 === Object);
         assert.ok(Object.getPrototypeOf(SuperType.prototype).constructor
                 === Object);
+
+        // All the prototype chains of all objects eventually lead to
+        // Object.prototpye
+        assert.ok(Object.getPrototypeOf(FunctionConstructorWithThis.prototype)
+                === Object.prototype);
+        assert.ok(
+            Object.getPrototypeOf(FunctionConstructorWithoutThis.prototype)
+                === Object.prototype);
     });
 });
