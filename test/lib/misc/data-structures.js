@@ -28,6 +28,7 @@ describe('Built-in data structures', function() {
     it('Iterator low level', function() {
         const x = ['zero', 'one', 'two', 'three'];
         const ans = x.slice();
+
         for(let i = x[Symbol.iterator](), j = i.next(), k = 0;
             !j.done;
             j = i.next(), k++) {
@@ -39,6 +40,24 @@ describe('Built-in data structures', function() {
         while(k++, j = i.next(), !j.done) {
             assert.strictEqual(j.value, ans[k]);
         }
+    });
+
+    it('Hash table', function() {
+        const x = new Map();
+        x.set('zero', 0);
+        x.set('one', 1);
+        x.set('two', 2);
+        assert.strictEqual(3, x.size);
+        assert.strictEqual(1, x.get('one'));
+        assert.strictEqual(undefined, x.get('four'));
+        x.set('one', 11);
+        assert.strictEqual(11, x.get('one'));
+        assert.ok(x.delete('two'));
+        assert.ok(!x.delete('two'));
+        assert.strictEqual(2, x.size);
+        assert.ok(!x.has('two'));
+        assert.ok(0 > Array.from(x.values()).indexOf('two'));
+        assert.ok(0 <= Array.from(x.values()).indexOf(11));
     });
 
 });
