@@ -60,4 +60,42 @@ describe('Built-in data structures', function() {
         assert.ok(0 <= Array.from(x.values()).indexOf(11));
     });
 
+    it('Hash table iteration', function() {
+        const keys = new Set();
+        keys.add('zero');
+        keys.add('one');
+        keys.add('three');
+        keys.add('two');
+        const values = new Set();
+        values.add(0);
+        values.add(2);
+        values.add(3);
+        values.add(1);
+        const x = new Map();
+        x.set('zero', 0);
+        x.set('one', 1);
+        x.set('three', 3);
+        x.set('two', 2);
+
+        x.forEach((v, k) => {
+            assert.ok(keys.has(k));
+            assert.ok(values.has(v));
+        });
+
+        for(let k of x.keys()) {
+            assert.ok(keys.has(k));
+        }
+
+        for(let v of x.values()) {
+            assert.ok(values.has(v));
+        }
+
+        for(let [k, v] of x) {
+            assert.ok(keys.has(k));
+            assert.ok(values.has(v));
+        }
+
+    });
+
+
 });
