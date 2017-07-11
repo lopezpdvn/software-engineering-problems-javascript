@@ -4,9 +4,9 @@
   "description": "Software engineering problems in JavaScript",
   "main": "index.js",
   "license": "MIT",
-  "repository" : {
-      "type" : "git",
-      "url" : "https://github.com/lopezpdvn/software-engineering-problems-javascript"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lopezpdvn/software-engineering-problems-javascript"
   },
   "author": {
     "name": "Pedro Ivan Lopez",
