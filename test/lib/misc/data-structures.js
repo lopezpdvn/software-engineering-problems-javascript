@@ -25,23 +25,6 @@ describe('Built-in data structures', function() {
         assert.strictEqual(undefined, x[99]);
     });
 
-    it('Iterator low level', function() {
-        const x = ['zero', 'one', 'two', 'three'];
-        const ans = x.slice();
-
-        for(let i = x[Symbol.iterator](), j = i.next(), k = 0;
-            !j.done;
-            j = i.next(), k++) {
-            assert.strictEqual(j.value, ans[k]);
-        }
-
-        const i = x[Symbol.iterator]();
-        let j = undefined, k = -1;
-        while(k++, j = i.next(), !j.done) {
-            assert.strictEqual(j.value, ans[k]);
-        }
-    });
-
     it('Hash table', function() {
         const x = new Map();
         x.set('zero', 0);
@@ -61,21 +44,13 @@ describe('Built-in data structures', function() {
     });
 
     it('Hash table iteration', function() {
-        const keys = new Set();
-        keys.add('zero');
-        keys.add('one');
-        keys.add('three');
-        keys.add('two');
-        const values = new Set();
-        values.add(0);
-        values.add(2);
-        values.add(3);
-        values.add(1);
         const x = new Map();
         x.set('zero', 0);
         x.set('one', 1);
         x.set('three', 3);
         x.set('two', 2);
+        const keys = new Set(x.keys());
+        const values = new Set(x.values());
 
         x.forEach((v, k) => {
             assert.ok(keys.has(k));
@@ -84,6 +59,7 @@ describe('Built-in data structures', function() {
 
         for(let k of x.keys()) {
             assert.ok(keys.has(k));
+            assert.ok(x.has(k));
         }
 
         for(let v of x.values()) {
@@ -92,6 +68,7 @@ describe('Built-in data structures', function() {
 
         for(let [k, v] of x) {
             assert.ok(keys.has(k));
+            assert.ok(x.has(k));
             assert.ok(values.has(v));
         }
 
