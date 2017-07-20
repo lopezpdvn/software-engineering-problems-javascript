@@ -54,4 +54,20 @@ describe('Patterns', function() {
         assert.ok(-3 === Math.min.apply(null, a));
         assert.ok(-3 === Math.min(...a));
     });
+
+    it('var positional function arguments', function() {
+        const args = ['a0', 'a1', 'a2', 'a3', 'a4', 'a5'];
+        const extraArgs = args.slice(3);
+
+        function f0(a0, a1, a2) {
+            assert.deepStrictEqual([...arguments].slice(3), extraArgs);
+        }
+
+        function f1(a0, a1, a2, ...vargs) {
+            assert.deepStrictEqual(vargs, extraArgs);
+        }
+
+        f0(...args);
+        f1(...args);
+    });
 });
