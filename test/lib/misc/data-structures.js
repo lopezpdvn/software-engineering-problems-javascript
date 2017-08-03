@@ -53,6 +53,7 @@ describe('Built-in data structures', function() {
         const values = new Set(x.values());
 
         x.forEach((v, k) => {
+            assert.ok(x.has(k));
             assert.ok(keys.has(k));
             assert.ok(values.has(v));
         });
@@ -67,6 +68,12 @@ describe('Built-in data structures', function() {
         }
 
         for(let [k, v] of x) {
+            assert.ok(keys.has(k));
+            assert.ok(x.has(k));
+            assert.ok(values.has(v));
+        }
+
+        for(let [k, v] of x.entries()) {
             assert.ok(keys.has(k));
             assert.ok(x.has(k));
             assert.ok(values.has(v));
