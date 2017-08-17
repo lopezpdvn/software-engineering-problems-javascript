@@ -79,6 +79,9 @@ describe('Built-in data structures', function() {
             assert.ok(values.has(v));
         }
 
+        for(let y in x) {
+            assert.ok(false); // This line does not execute.
+        }
     });
 
 
