@@ -85,6 +85,9 @@ function FunctionConstructorWithoutThis() {
 // Parasitic combination inheritance ==================================
 
 const inheritPrototype = (subType, superType) => {
+    // Commented lines should also work. TODO: unit test
+    // const prototype = Object.create(superType.prototype,
+        //{ constructor: subType })
     const prototype = Object.create(superType.prototype);
     prototype.constructor = subType;
     subType.prototype = prototype;
