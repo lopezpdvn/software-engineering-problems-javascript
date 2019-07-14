@@ -18,6 +18,7 @@
     "push": "git push origin master"
   },
   "devDependencies": {
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "lodash": ">=4.17.13"
   }
 }
