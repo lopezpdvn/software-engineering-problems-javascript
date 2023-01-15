@@ -20,6 +20,6 @@
   "devDependencies": {
     "lodash": "^4.17.21",
     "minimist": "^1.2.6",
-    "mocha": "^6.2.3"
+    "mocha": "^10.2.0"
   }
 }
